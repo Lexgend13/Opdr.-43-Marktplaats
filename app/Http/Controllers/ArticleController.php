@@ -12,6 +12,9 @@ use App\Http\Requests\UpdateArticleRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 
+
+// TODO :: Return types aangeven bij methods, zodat voor iedereen duidelijk is wat er moet worden terug gestuurd en er errors komen als je iets anders terug stuurt.
+
 class ArticleController extends Controller
 {
     /**
@@ -111,6 +114,7 @@ class ArticleController extends Controller
 
     public function search(Request $request)
     {
+        // TODO: aparte form reuqest validation class voor maken
         $request->validate([
             'query' => 'required|min:3'
         ]);

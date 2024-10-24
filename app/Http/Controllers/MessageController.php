@@ -17,6 +17,7 @@ class MessageController extends Controller
      */
     public function index()
     {
+        // TODO: gebruik auth()->messages
         $messages = Message::where('user_id',auth()->id())->orderByDesc('updated_at')->get();
         $users = User::select('id', 'name')->where('id', '!=', 1)->get();
         return view('marktplaats.messages', ['messages' => $messages, 'users' => $users]);
@@ -35,6 +36,7 @@ class MessageController extends Controller
      */
     public function store(StoreMessageRequest $request)
     {
+        // TODO: ongebruikte comments verwijderen voor betere leesbaarheid code
         //dd($request);
         $validatedData = $request->validated();
         $validatedData['writer'] = auth()->user()->name;

@@ -72,6 +72,7 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request) //This is actually a login function
     {
         $validatedData = $request->validated();
+        // TODO: liever op basis van emailadres opvragen
         $user = User::where('name', $request->name)->first();
         if (!Hash::check($request->password, $user->password)) {
             return back()->withErrors(['password' => 'The provided password is incorrect.']);

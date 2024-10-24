@@ -8,6 +8,8 @@ use App\Models\User;
 
 use Illuminate\Http\Request;
 
+// TODO: lege ongebruikte controllers verwijderen
+
 class CategoryController extends Controller
 {
     /**
